@@ -20,7 +20,7 @@ Take `sass` for example:
 $ npm i node-sass sass-loader --save
 ```
 
-Then, you just need to change the `style` tag as: `<style lang="sass"><style>`.
+Then, you just need to change the `style` tag as: `<style lang="sass" scoped><style>`.
 
 ## How to create your own template
 
