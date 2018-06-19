@@ -124,6 +124,7 @@
     "weex-loader": "^0.7.2",
     "less": "^3.0.1",
     "less-loader": "^4.1.0",
+    "less-vars-to-js": "^1.2.1",
     "babel-plugin-component": "^1.1.1"
   }
 }

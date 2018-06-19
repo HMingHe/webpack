@@ -2,6 +2,10 @@ const path = require('path')
 const config = require('./config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
+const fs = require('fs')
+const helper = require('./helper')
+
+const variableLess = fs.readFileSync(helper.root('variable.less'), 'utf-8')
 
 exports.cssLoaders = function (options) {
   options = options || {}
@@ -43,7 +47,7 @@ exports.cssLoaders = function (options) {
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
-    less: generateLoaders('less'),
+    less: generateLoaders('less', {modifyVars: require('less-vars-to-js')(variableLess)}),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
